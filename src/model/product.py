@@ -17,10 +17,6 @@ class Product(db.Model):
 
 
     def __repr__(self):
-            """
-            String representation of a Product object, useful for debugging.
-            Now includes the image filename.
-            """
             return f"Product('{self.name}', ${self.price:.2f}', Image: '{self.image}')"
 
 class Order(db.Model):
@@ -32,9 +28,6 @@ class Order(db.Model):
     order_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self):
-        """
-        String representation of an Order object.
-        """
         return f"Order(ID: {self.id}, Product ID: {self.product_id}, Quantity: {self.quantity}, Date: {self.order_date.strftime('%Y-%m-%d %H:%M:%S')})"
 
 if __name__ == '__main__':
